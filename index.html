@@ -9,17 +9,19 @@
 
 <style>
 :root{
-    --widget-width: 300px;
+    --widget-width: 100%;
 }
 
 body{
     margin:0;
     background:transparent;
     font-family:'DM Sans', sans-serif;
+    overflow-x:hidden; /* QUITA SCROLL HORIZONTAL */
 }
 
 .resize-lines{
-    width:var(--widget-width);
+    width:100%;
+    max-width:300px; /* límite máximo */
     margin:auto;
     position:relative;
 }
@@ -147,4 +149,5 @@ body{
 
 </body>
 </html>
+
 
