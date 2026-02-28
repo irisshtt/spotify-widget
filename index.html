@@ -9,7 +9,7 @@
 
 <style>
 :root{
-    --widget-width: 280px; /* MÁS PEQUEÑO */
+    --widget-width: 220px; /* ULTRA PEQUEÑO */
 }
 
 body{
@@ -29,8 +29,8 @@ body{
 .resize-lines::after{
     content:"";
     position:absolute;
-    height:3px;
-    width:40px;
+    height:2px;
+    width:28px;
     background:#777;
     border-radius:10px;
     opacity:0.4;
@@ -38,67 +38,66 @@ body{
 }
 
 .resize-lines::before{
-    bottom:-14px;
+    bottom:-10px;
     left:50%;
     transform:translateX(-50%);
 }
 
 .resize-lines::after{
-    right:-14px;
+    right:-10px;
     top:50%;
     transform:translateY(-50%) rotate(90deg);
 }
 
 .resize-lines:hover::before,
 .resize-lines:hover::after{
-    opacity:0.8;
+    opacity:0.9;
 }
 
 /* WIDGET */
 .widget{
     width:100%;
     background:#54595f;
-    border-radius:20px;
-    padding:16px; /* menos espacio interno */
+    border-radius:16px;
+    padding:12px;
     box-sizing:border-box;
     color:white;
     transition:all 0.3s ease;
-    position:relative;
 }
 
 .widget:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.35);
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.35);
 }
 
 .cover{
-    width:110px; /* más pequeña */
-    height:110px;
-    border-radius:16px;
+    width:80px;
+    height:80px;
+    border-radius:12px;
     object-fit:cover;
 }
 
 .song{
-    margin-top:14px;
-    font-size:17px; /* más pequeño */
+    margin-top:10px;
+    font-size:14px;
     font-weight:600;
 }
 
 .artist{
-    margin-top:4px;
-    font-size:13px;
+    margin-top:2px;
+    font-size:11px;
     opacity:0.7;
 }
 
 .controls{
-    margin-top:14px;
+    margin-top:10px;
     display:flex;
     justify-content:flex-end;
-    gap:14px;
+    gap:10px;
 }
 
 .btn{
-    font-size:18px; /* botones más pequeños */
+    font-size:14px;
     cursor:pointer;
     transition:0.2s;
 }
