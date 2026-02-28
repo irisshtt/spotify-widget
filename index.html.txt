@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Aesthetic Widget</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --widget-width: 360px;
+}
+
+body{
+    margin:0;
+    background:transparent;
+    font-family:'DM Sans', sans-serif;
+}
+
+/* RESIZE GUIDES */
+.resize-lines{
+    width:var(--widget-width);
+    margin:auto;
+    position:relative;
+}
+
+.resize-lines::before,
+.resize-lines::after{
+    content:"";
+    position:absolute;
+    height:4px;
+    width:60px;
+    background:#777;
+    border-radius:10px;
+    opacity:0.4;
+    transition:0.3s;
+}
+
+.resize-lines::before{
+    bottom:-18px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.resize-lines::after{
+    right:-18px;
+    top:50%;
+    transform:translateY(-50%) rotate(90deg);
+}
+
+.resize-lines:hover::before,
+.resize-lines:hover::after{
+    opacity:0.8;
+}
+
+/* WIDGET */
+.widget{
+    width:100%;
+    background:#54595f;
+    border-radius:26px;
+    padding:22px;
+    box-sizing:border-box;
+    color:white;
+    transition:all 0.3s ease;
+    position:relative;
+}
+
+.widget:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.cover{
+    width:150px;
+    height:150px;
+    border-radius:20px;
+    object-fit:cover;
+}
+
+.song{
+    margin-top:18px;
+    font-size:22px;
+    font-weight:600;
+}
+
+.artist{
+    margin-top:6px;
+    font-size:15px;
+    opacity:0.7;
+}
+
+.controls{
+    margin-top:20px;
+    display:flex;
+    justify-content:flex-end;
+    gap:18px;
+}
+
+.btn{
+    font-size:22px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.btn:hover{
+    transform:scale(1.2);
+    opacity:0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="resize-lines">
+    <div class="widget">
+        <img class="cover" src="https://i.imgur.com/kxMqlab.jpeg">
+        
+        <div class="song">404notfound</div>
+        <div class="artist">iris shi†</div>
+
+        <div class="controls">
+            <div class="btn">⏮</div>
+            <div class="btn">⏭</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
