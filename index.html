@@ -9,7 +9,7 @@
 
 <style>
 :root{
-    --widget-width: 220px; /* ULTRA PEQUEÑO */
+    --widget-width: 300px;
 }
 
 body{
@@ -18,93 +18,83 @@ body{
     font-family:'DM Sans', sans-serif;
 }
 
-/* RESIZE GUIDES */
 .resize-lines{
     width:var(--widget-width);
     margin:auto;
     position:relative;
 }
 
-.resize-lines::before,
-.resize-lines::after{
-    content:"";
-    position:absolute;
-    height:2px;
-    width:28px;
-    background:#777;
-    border-radius:10px;
-    opacity:0.4;
-    transition:0.3s;
-}
-
-.resize-lines::before{
-    bottom:-10px;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-.resize-lines::after{
-    right:-10px;
-    top:50%;
-    transform:translateY(-50%) rotate(90deg);
-}
-
-.resize-lines:hover::before,
-.resize-lines:hover::after{
-    opacity:0.9;
-}
-
 /* WIDGET */
 .widget{
     width:100%;
     background:#54595f;
-    border-radius:16px;
-    padding:12px;
+    border-radius:18px;
+    padding:14px;
     box-sizing:border-box;
     color:white;
-    transition:all 0.3s ease;
+    display:flex;
+    gap:14px;
+    transition:0.3s;
 }
 
 .widget:hover{
     transform:translateY(-3px);
-    box-shadow:0 10px 20px rgba(0,0,0,0.35);
+    box-shadow:0 12px 25px rgba(0,0,0,0.35);
+}
+
+/* LEFT SIDE */
+.left{
+    width:90px;
 }
 
 .cover{
-    width:80px;
-    height:80px;
-    border-radius:12px;
+    width:90px;
+    height:90px;
+    border-radius:14px;
     object-fit:cover;
 }
 
 .song{
-    margin-top:10px;
-    font-size:14px;
+    margin-top:8px;
+    font-size:13px;
     font-weight:600;
 }
 
 .artist{
-    margin-top:2px;
     font-size:11px;
     opacity:0.7;
 }
 
-.controls{
-    margin-top:10px;
-    display:flex;
-    justify-content:flex-end;
-    gap:10px;
+/* RIGHT SIDE PLAYLIST */
+.playlist{
+    flex:1;
+    max-height:120px;
+    overflow-y:auto;
+    font-size:12px;
 }
 
-.btn{
-    font-size:14px;
-    cursor:pointer;
+.track{
+    display:flex;
+    gap:8px;
+    padding:4px 0;
+    opacity:0.7;
     transition:0.2s;
 }
 
-.btn:hover{
-    transform:scale(1.15);
-    opacity:0.7;
+.track:hover{
+    opacity:1;
+}
+
+.number{
+    width:18px;
+    text-align:right;
+    opacity:0.5;
+}
+
+.name{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 </style>
 </head>
@@ -113,15 +103,45 @@ body{
 
 <div class="resize-lines">
     <div class="widget">
-        <img class="cover" src="https://i.imgur.com/kxMqlab.jpeg">
-        
-        <div class="song">404notfound</div>
-        <div class="artist">iris shi†</div>
 
-        <div class="controls">
-            <div class="btn">⏮</div>
-            <div class="btn">⏭</div>
+        <!-- IZQUIERDA -->
+        <div class="left">
+            <img class="cover" src="https://i.imgur.com/kxMqlab.jpeg">
+            <div class="song">404notfound</div>
+            <div class="artist">iris shi†</div>
         </div>
+
+        <!-- DERECHA PLAYLIST -->
+        <div class="playlist">
+
+            <!-- EDITA AQUÍ TUS CANCIONES -->
+            <div class="track">
+                <div class="number">01</div>
+                <div class="name">RUDE!</div>
+            </div>
+
+            <div class="track">
+                <div class="number">02</div>
+                <div class="name">True Romance</div>
+            </div>
+
+            <div class="track">
+                <div class="number">03</div>
+                <div class="name">The Aisle</div>
+            </div>
+
+            <div class="track">
+                <div class="number">04</div>
+                <div class="name">Picture You</div>
+            </div>
+
+            <div class="track">
+                <div class="number">05</div>
+                <div class="name">Fame is a Gun</div>
+            </div>
+
+        </div>
+
     </div>
 </div>
 
